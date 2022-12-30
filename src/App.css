@@ -77,12 +77,38 @@ select {
   }
 }
 
-[theme*="light"]{
-  --backgroung: #ffffff;
-  --text-color: #000000;
+body {
+  background-image: url(../public/image/bg.png);
+  background-color: var(--background-color);
+  background-attachment: fixed;
+  transition: background .3s, color .3s, box-shadow .3s;
 }
 
-[theme*="dark"]{
-  --backgroung: #000000;
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 5px auto;
+  border-radius: 5px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 0 0 5px var(--text-color);
+} 
+
+[theme*="light"] {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --main-color: #17989D;
+  --main-focus-color: #12787b;
+}
+
+[theme*="dark"] {
+  --background-color: #000000;
   --text-color: #ffffff;
+  --main-color: #17989D;
+  --main-focus-color: #1db7bd;
+}
+
+main {
+  height: 150vh;
 }
