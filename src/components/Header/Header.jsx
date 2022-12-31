@@ -5,18 +5,30 @@ import s from "./Header.module.css";
 import { BsMoon, BsSun, BsHeart, BsCart2, BsPerson } from "react-icons/bs";
 import { HiLanguage } from "react-icons/hi2";
 import { setDarkTheme, setLightTheme } from "../../store/theme/themeActions";
+import { toggleMenu } from "../../store/Header/headerActions";
 
 export const Header = (props) => {
   const theme = useSelector((strore) => strore.theme.theme);
+  const menuState = useSelector((strore) => strore.header.menuState);
   const dispatch = useDispatch();
   return (
-    <header >
+    <header>
       <div className={s.header}>
         <div className={s.leftbtn}>
           {theme === "light" ? (
-            <BsMoon onClick={() => dispatch(setDarkTheme())} />
+            <BsMoon
+              onClick={() => {
+                localStorage.setItem("theme", "dark");
+                dispatch(setDarkTheme());
+              }}
+            />
           ) : (
-            <BsSun onClick={() => dispatch(setLightTheme())} />
+            <BsSun
+              onClick={() => {
+                localStorage.setItem("theme", "light");
+                dispatch(setLightTheme());
+              }}
+            />
           )}
           <HiLanguage />
         </div>
@@ -31,14 +43,14 @@ export const Header = (props) => {
         </div>
       </div>
       <div className={s.linkBar}>
-        <div className={s.linkItem}>Форум</div>
-        <div className={s.linkItem}>Оплата й доставка</div>
-        <div className={s.linkItem}>Контакти</div>
-        <div className={s.linkItem}>Статті</div>
-        <div className={s.linkItem}>Документація</div>
-        <div className={s.linkItem}>Скарги / Пропозиції</div>
-        <div className={s.linkItem}>Гарантія поверення</div>
-
+        <div className={`${s.linkItem} ${s.menubtn}`} onClick={()=>dispatch(toggleMenu())}>≡</div>
+        <div className={`${s.linkItem} ${menuState && s.active}`}>Форум</div>
+        <div className={`${s.linkItem} ${menuState && s.active}`}>Оплата й доставка</div>
+        <div className={`${s.linkItem} ${menuState && s.active}`}>Контакти</div>
+        <div className={`${s.linkItem} ${menuState && s.active}`}>Статті</div>
+        <div className={`${s.linkItem} ${menuState && s.active}`}>Документація</div>
+        <div className={`${s.linkItem} ${menuState && s.active}`}>Скарги / Пропозиції</div>
+        <div className={`${s.linkItem} ${menuState && s.active}`}>Гарантія поверення</div>
       </div>
     </header>
   );

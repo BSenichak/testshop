@@ -54,6 +54,45 @@
     cursor: pointer;
 }
 
+.menubtn {
+    display: none;
+}
+
 .linkItem:hover {
     background-color: var(--main-focus-color);
+}
+
+@media (max-width:1200px) and (min-width:992px) {
+    
+}
+@media (max-width:992px) and (min-width:768px) {
+    
+}
+@media (max-width:768px) and (min-width:600px) {
+    .linkBar{
+        flex-direction: column;
+    }
+    .linkItem {
+        display: none;
+    }
+    .menubtn {
+        display: block;
+    }
+    .active{
+        display: block;
+    }
+}
+@media (max-width:600px) {
+    .linkBar{
+        flex-direction: column;
+    }
+    .linkItem {
+        display: none;
+    }
+    .menubtn {
+        display: block;
+    }
+    .active{
+        display: block;
+    }
 }

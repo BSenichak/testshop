@@ -1,9 +1,10 @@
 .footer {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     padding: 8vh 4vw;
     color: var(--text-color);
     font-family: cursive;
+    grid-gap: 20px;
 }
 
 .logo {
@@ -60,4 +61,28 @@
 .socMediaBar svg:hover {
     background-color: var(--main-focus-color);
     box-shadow: 0 0 10px var(--main-focus-color);
+}
+
+@media (max-width:1200px) and (min-width:992px) {
+    
+}
+@media (max-width:992px) and (min-width:768px) {
+    .footer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+@media (max-width:768px) and (min-width:600px) {
+    .footer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width:600px) {
+    .footer{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .socMediaBar{
+        justify-content: space-around;
+    }
 }
