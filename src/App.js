@@ -12,7 +12,7 @@ function App() {
     document.body.setAttribute("theme", theme);
   });
   return (
-    <div className="Wrapper" onLoad={()=>dispatch(setTheme(localStorage.getItem("theme")))}>
+    <div className="Wrapper" onLoad={localStorage.getItem("theme")&&(()=>dispatch(setTheme(localStorage.getItem("theme"))))}>
       <Header />
       <main></main>
       <Footer />

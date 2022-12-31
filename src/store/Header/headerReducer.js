@@ -1,7 +1,7 @@
 import { CLOSE_MENU, OPEN_MENU, TOGGLE_MENU } from "./headerActions";
 
 const initalState = {
-    menuState: true
+    menuState: false
 }
 
 export function headerReaducer(store= initalState, action){
