@@ -4,6 +4,8 @@ import { setTheme } from "./store/theme/themeActions";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import { Route, Routes } from "react-router-dom";
+import Start from "./components/Start/Start";
 
 function App() {
   const theme = useSelector((strore) => strore.theme.theme);
@@ -14,7 +16,9 @@ function App() {
   return (
     <div className="Wrapper" onLoad={localStorage.getItem("theme")&&(()=>dispatch(setTheme(localStorage.getItem("theme"))))}>
       <Header />
-      <main></main>
+      <Routes>
+        <Route path="/" element={<Start/>} />
+      </Routes>
       <Footer />
     </div>
   );

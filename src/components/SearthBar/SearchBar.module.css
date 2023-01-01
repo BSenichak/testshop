@@ -1,0 +1,92 @@
+.searchBar {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid var(--background-color);
+    background-color: var(--main-color);
+    margin: 1px;
+    padding: 5px;
+    color: var(--background-color);
+  }
+  
+  .searchPanel {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--background-color);
+    border-radius: 100px;
+    padding: 5px 10px;
+    position: relative;
+  }
+  
+  .searthBtn {
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .searchPanel input {
+    border: none;
+    background-color: transparent;
+    color: var(--background-color);
+    width: 20vw;
+  }
+  
+  .searchPanel input::placeholder {
+    color: var(--main-focus-color);
+  }
+  
+  .searchPanel input:focus {
+    outline: none;
+  }
+  
+  .sortBar {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: white ;
+  }
+  
+  .sortBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    font-size: small;
+    padding: 5px;
+    border-radius: 3px;
+  }
+  .sortBtn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .sortBtn svg {
+    font-size: 2.5vh;
+  }
+  
+  .activeSort {
+      background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  @media (max-width: 768px) {
+      .searchBar{
+          flex-direction: column;
+      }
+      .searchPanel {
+          justify-content: space-between;
+      }
+      .sortBar {
+          justify-content: space-around;
+      }
+   }
+  
+   .searthResult{
+      position: absolute;
+      top: 5vh;
+      background-color: var(--main-color);
+      width: 20vw;
+      padding: 5px;
+      display: none;
+   }
+  
+   .SRactive{
+      display: block;
+   }

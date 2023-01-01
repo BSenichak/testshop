@@ -92,7 +92,7 @@ body {
   border-radius: 5px;
   background-color: var(--background-color);
   color: var(--text-color);
-  box-shadow: 0 0 5px var(--text-color);
+  box-shadow: 0 0 5px black;
 } 
 
 [theme*="light"] {
