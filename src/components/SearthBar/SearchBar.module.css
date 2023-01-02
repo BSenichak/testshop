@@ -11,10 +11,11 @@
   .searchPanel {
     display: flex;
     align-items: center;
-    border: 1px solid var(--background-color);
+    /* border: 1px solid var(--background-color); */
     border-radius: 100px;
     padding: 5px 10px;
     position: relative;
+    background-color: var(--main-focus-color);
   }
   
   .searthBtn {
@@ -30,7 +31,7 @@
   }
   
   .searchPanel input::placeholder {
-    color: var(--main-focus-color);
+    color: var(--main-color);
   }
   
   .searchPanel input:focus {
