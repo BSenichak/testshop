@@ -1,0 +1,42 @@
+.posterWrapper {
+    width: auto;
+    overflow: hidden;
+    margin: 2px 5px;
+    position: relative;
+}
+
+.posterSlider {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    transition: left 0.5s;
+}
+
+.btns {
+    position: absolute;
+    bottom: 5%;
+    color: brown;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.circle {
+    width: 1vw;
+    height: 1vw;
+    background-color: var(--main-focus-color);
+    border-radius: 50%;
+    transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.circle:hover {
+    box-shadow: 0 0 0 0.7vw rgba(0, 0, 0, 0.349);
+}
+
+.active {
+    background-color: #20bbc0;
+}
+

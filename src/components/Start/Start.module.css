@@ -22,10 +22,11 @@
 }
 
 .itemtitle {
-    font-family: cursive;
+    font-family: 'Nunito', sans-serif;
     font-size: medium;
     padding: 20px 0;
     text-align: center;
+    padding: 0 20px;
 }
 
 .catItem:hover {
@@ -41,7 +42,7 @@
     padding: 10px;
     font-size: larger;
     color: var(--text-color);
-    font-family: cursive;
+    font-family: 'Nunito', sans-serif;
     text-align: center;
 }
 

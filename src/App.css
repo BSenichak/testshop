@@ -77,6 +77,8 @@ select {
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Nunito&display=swap');
+
 body {
   background-image: url(../public/image/bg.png);
   background-color: var(--background-color);
@@ -112,3 +114,8 @@ body {
 main {
   min-height: 100vh;
 }
+
+/*
+font-family: 'Caveat', cursive;
+font-family: 'Nunito', sans-serif;
+*/

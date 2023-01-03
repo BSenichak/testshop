@@ -1,13 +1,15 @@
 import React from "react";
 import { connect, useSelector } from "react-redux";
 import SearthBar from "../SearthBar/SearthBar";
+import Poster from "./Poster/Poster";
 import s from "./Start.module.css";
 
 export const Start = (props) => {
   const categories = useSelector((store) => store.main.categories);
   return (
     <main className={s.main}>
-      <SearthBar />
+      <Poster/>
+      <SearthBar /> 
       <div className={s.catTitle}>Категорії</div>
       <div className={s.categories}>
         {categories.map((item) => {
