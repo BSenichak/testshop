@@ -6,6 +6,7 @@
     grid-row: 9vh;
     flex-wrap: wrap;
     padding: 10px 20px;
+    position: relative;
 }
 
 .logoBar {
@@ -35,6 +36,7 @@
 
 .leftbtn {
     justify-self: start;
+    position: relative;
 }
 
 
@@ -124,4 +126,19 @@
         justify-self: end;
         margin-right: 20px;
     }
+}
+
+.lang {
+    display: none;
+    position: absolute;
+    left: 5vh;
+    top: 5vh;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.langActive {
+    display: block;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import s from "./Header.module.css";
@@ -11,6 +11,7 @@ export const Header = (props) => {
   const theme = useSelector((strore) => strore.theme.theme);
   const menuState = useSelector((strore) => strore.header.menuState);
   const dispatch = useDispatch();
+  const [langState, setLangState] = useState(false);
   return (
     <header>
       <div className={s.header}>
@@ -30,7 +31,10 @@ export const Header = (props) => {
               }}
             />
           )}
-          <HiLanguage />
+          <HiLanguage onClick={()=>setLangState(!langState)}/>
+          <div className={`${s.lang} ${langState && s.langActive}`}>
+            <div id="google_translate_element"></div>
+          </div>
         </div>
         <div className={s.logoBar}>
           <img src="../image/logo1.png" alt="logo" className={s.logo} />
@@ -43,14 +47,27 @@ export const Header = (props) => {
         </div>
       </div>
       <div className={s.linkBar}>
-        <div className={`${s.linkItem} ${s.menubtn}`} onClick={()=>dispatch(toggleMenu())}>≡</div>
+        <div
+          className={`${s.linkItem} ${s.menubtn}`}
+          onClick={() => dispatch(toggleMenu())}
+        >
+          ≡
+        </div>
         <div className={`${s.linkItem} ${menuState && s.active}`}>Форум</div>
-        <div className={`${s.linkItem} ${menuState && s.active}`}>Оплата й доставка</div>
+        <div className={`${s.linkItem} ${menuState && s.active}`}>
+          Оплата й доставка
+        </div>
         <div className={`${s.linkItem} ${menuState && s.active}`}>Контакти</div>
         <div className={`${s.linkItem} ${menuState && s.active}`}>Статті</div>
-        <div className={`${s.linkItem} ${menuState && s.active}`}>Документація</div>
-        <div className={`${s.linkItem} ${menuState && s.active}`}>Скарги / Пропозиції</div>
-        <div className={`${s.linkItem} ${menuState && s.active}`}>Гарантія поверення</div>
+        <div className={`${s.linkItem} ${menuState && s.active}`}>
+          Документація
+        </div>
+        <div className={`${s.linkItem} ${menuState && s.active}`}>
+          Скарги / Пропозиції
+        </div>
+        <div className={`${s.linkItem} ${menuState && s.active}`}>
+          Гарантія поверення
+        </div>
       </div>
     </header>
   );

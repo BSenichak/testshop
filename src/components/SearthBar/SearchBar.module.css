@@ -3,7 +3,7 @@
     justify-content: space-between;
     border: 1px solid var(--background-color);
     background-color: var(--main-color);
-    margin: 1px;
+    margin: 2px 5px;
     padding: 5px;
     color: var(--background-color);
   }
@@ -17,6 +17,7 @@
     padding: 5px 10px;
     position: relative;
     background-color: var(--main-focus-color);
+    width: 25vw;
   }
   
   .searthBtn {
@@ -28,7 +29,8 @@
     border: none;
     background-color: transparent;
     color: var(--background-color);
-    width: 20vw;
+    width: auto;
+    flex-grow: 1;
   }
   
   .searchPanel input::placeholder {
@@ -76,6 +78,7 @@
       }
       .searchPanel {
           justify-content: space-between;
+          width: 100%;
       }
       .sortBar {
           justify-content: space-around;
