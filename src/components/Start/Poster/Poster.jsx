@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import s from "./Poster.module.css";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa"
 
 export const Poster = (props) => {
   const [postition, setPosition] = useState(0);
@@ -28,6 +29,8 @@ export const Poster = (props) => {
         <div className={`${s.circle} ${postition === -200 && s.active}`} onClick={()=>setPosition(-200)}/>
         <div className={`${s.circle} ${postition === -300 && s.active}`} onClick={()=>setPosition(-300)}/>
       </div>
+        <div className={s.leftArrow} onClick={()=>setPosition(postition!==0?postition + 100:-300)}><FaArrowAltCircleLeft/></div>
+        <div className={s.rightArrow}  onClick={()=>setPosition(postition!==-300?postition - 100:0)}><FaArrowAltCircleRight/></div>
     </div>
   );
 };

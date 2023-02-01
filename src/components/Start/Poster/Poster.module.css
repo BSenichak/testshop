@@ -40,3 +40,23 @@
     background-color: #20bbc0;
 }
 
+.leftArrow, .rightArrow {
+    position: absolute;
+    color: var(--main-focus-color);
+    font-size: 3rem;
+    top: 40%;
+    filter: drop-shadow(0 0 1px black);
+    transition: color 0.3s;
+}
+
+.leftArrow {
+    left: 20px;
+}
+.rightArrow {
+    right: 20px;
+}
+
+.leftArrow:hover, .rightArrow:hover {
+    color: var(--main-color);
+}
+
